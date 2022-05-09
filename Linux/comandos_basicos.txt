@@ -1,0 +1,98 @@
+# ANOTAÇÕES LINUX
+
+## Editor VIM
+
+i - modo de inserção.
+ESC - modo de comando.
+w - modo de gravação
+q - sai do editor
+wq - grava e sai
+q! - sai do editor sem salvar as últimas alterações.
+a - insere um caractere após o cursor.
+ctrl + a - o cursor vai para o final da linha.
+o - insere uma linha.
+v - seleção de texto por caracteres.
+ctrl + v - seleciona uma linha inteira.
+y - copia o texto / palavra selecionada.
+p - cola o arquivo uma posição após o cursor.
+P - cola uma posição antes do cursor.
+x - recorta o caractere.
+u - desfaz a alteração.
+ctrl + r - refaz a última modificação.
+
+É possível fazer a seleção de colunas, ao invés de palavras, para aplicar modificações automaticamente. 
+
+ctrl + v, shift + i e insere a modificação.
+
+O VIM permite que vários arquivos sejam abertos ao mesmo tempo.
+
+$ vim -o arquivo1 arquivo2
+
+Para navegar entre as telas;
+
+ctrl + w + K - move a tela para cima.
+ctrl + w + J - move a tela para baixo.
+ctrl + w + L - move a tela para direita.
+ctrl + w + H - move a tela para esquerda.
+:res - maximiza a janela determinada.
+ctrl + w + = - restaura a divisão entre as telas.
+ctrl + w + T - abre as janelas em abas.
+gt - alterna entre as duas telas.
+:syn on - sintaxe highlights.
+:set tabstop=4 - transforma os tabs num determinado número de espaços.
+:set list - mostra todos os caracteres especiais.
+:set nolist - oculta os caracteres especiais.
+:set nu - mostra as linhas.
+:set expandtab - todos os tabs tornam-se espaços.
+:set noexpandtab - os espaços não são mais adicionados.
+/nome_pesquisa - pesquisa determinada palavra no texto.
+n - continua procurando a palavra pesquisada.
+:set hlsearch - evidencia a palavra pesquisada.
+:%s/palavra a ser trocada/nova_palavra/ - faz substituição de palavras
+
+Por padrão o VIM trabalha com case sensitive, para ignorar isto deve-se setar a opção ":set ignorecase".
+
+Para deixar algumas opções pré-configuradas, abre-se o arquivo "vim.rc" na pasta HOME e adiciona os comandos desejados. Na próxima vez em que o VIM for executado, as configurações entrarão em vigor.
+
+:set paste - cola determinado pedaço de texto da área de transferência, no VIM. Utiliza-se a roda do mouse para que ele faça a colagem.
+
+------------------------------------------------------------------
+Comando expand converte os tabs em espaços.
+
++++Comandos linux+++
+
+du -shc /* | sort -h - irá verificar o tamanho das pastas
+
+du -shc /var/log/* | sort -h - verifica o tamanho dos logs
+
+du -shc /var/lib/* | sort -h - se tiver máquinas virtuais
+
+== Removendo chaves ssh ==
+
+ssh-keygen -f "/home/john/.ssh/known_hosts" -R "192.168.18.28"
+
+== Abaixando a tela do notebook sem desligá-lo. ==
+
+# nano /etc/systemd/logind.conf
+
+descomentar as linhas que se chamam "HandleLidSwitch, e comenta com "ignore.
+Depois reinicia o serviço com systemctl restart systemd-logind.service
+
+== Configurando o grub para apagar a tela ==
+
+# nano /etc/default/grub
+
+Acrescenta na linha "GRUB_CMDLINE_LINUX="consoleblan=300"" e depois atualiza o grub.
+
+== Recarregando os grupos de usuário == 
+
+$ newgrep nome_do_grupo
+
+== Busca de arquivos nos repositórios através do APT ==
+
+apt list, show, search, não precisa de sudo
+
+
+== Comando para atualizar a versão pelo backports no Debian ==
+
+apt install -t distro-backports nome_do_programa
