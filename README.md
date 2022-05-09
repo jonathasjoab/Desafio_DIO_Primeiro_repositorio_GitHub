@@ -1,4 +1,3 @@
-# Desafio_DIO_Primeiro_repositorio_GitHub
-Desafio DIO Primeiro repositório GitHub
+# Desafio GitHub DIO - Primeiro Repositorio
 
 ## LINUX COMANDOS BÁSICOS
