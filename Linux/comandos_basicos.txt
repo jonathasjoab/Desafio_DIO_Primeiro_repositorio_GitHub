@@ -69,7 +69,7 @@ du -shc /var/lib/* | sort -h - se tiver máquinas virtuais
 
 == Removendo chaves ssh ==
 
-ssh-keygen -f "/home/john/.ssh/known_hosts" -R "192.168.18.28"
+ssh-keygen -f "/home/user/.ssh/known_hosts" -R "192.168.18.28"
 
 == Abaixando a tela do notebook sem desligá-lo. ==
 
